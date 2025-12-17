@@ -1,0 +1,9 @@
+# База даних (не завантажуємо)
+*.sqlite3
+
+# Службові файли Python
+__pycache__/
+*.pyc
+
+# Django
+/media
