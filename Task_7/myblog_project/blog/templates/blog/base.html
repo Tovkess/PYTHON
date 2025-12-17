@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        h1 { color: #333; }
+        .date { color: #777; font-size: 0.9em; }
+        .pagination { margin-top: 20px; }
+        .comment { border-bottom: 1px solid #eee; padding: 10px 0; }
+        .info { font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
