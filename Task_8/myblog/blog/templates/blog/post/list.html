@@ -1,0 +1,18 @@
+{% extends "blog/base.html" %}
+{% load blog_tags %}
+
+{% block title %}Мій Блог{% endblock %}
+
+{% block content %}
+    <h1>Мій Блог</h1>
+    {% if tag %}
+        <h2>Пости з тегом "{{ tag.name }}"</h2>
+    {% endif %}
+
+    {% for post in posts %}
+        <h2><a href="{% url 'blog:post_detail' post.id %}">{{ post.title }}</a></h2>
+        
+        <p>Теги: {{ post.tags.all|join:", " }}</p> <p>Опубліковано {{ post.publish }}</p>
+        
+        {{ post.body|markdown|truncatewords_html:30 }} {% endfor %}
+{% endblock %}
